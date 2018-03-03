@@ -2,13 +2,13 @@
 #include<unistd.h>
 
 int main(void){
-    int pid=0;                      // init int pid=0
+    int pid=0;
 
-    printf("PID:");                 // input banner PID:
-    scanf("%d",&pid);               // input PID
+    printf("PID:");
+    scanf("%d",&pid);
 
-    syscall(338,pid);               // use sys_my_syscall
-    execv("/usr/bin/dmesg",NULL);   // run dmesg and see result
+    syscall(338,pid);
+    execv("/usr/bin/dmesg",NULL);
 
     return 0;
 }

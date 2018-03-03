@@ -24,7 +24,6 @@ asmlinkage long sys_my_syscall(int pid){
     unsigned long text = (PAGE_ALIGN(mm->end_code) - (mm->start_code & PAGE_MASK)) >> (PAGE_SHIFT - 2);
     unsigned long data = mm->data_vm * 4;
     unsigned long resident = shared + get_mm_counter(mm, MM_ANONPAGES);
-    //Resident file mapping pages + Resident shared memory pages + Resident anonymous pages
 
     printk("\nCode  Segment start = 0x%lx, end = 0x%lx, Size = %ld KB\n"
              "Data  Segment start = 0x%lx, end = 0x%lx, Size = %ld KB\n"
